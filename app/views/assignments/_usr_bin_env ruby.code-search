@@ -1,0 +1,8 @@
+# Query: #!/usr/bin/env ruby3.0
+# ContextLines: 1
+
+1 result - 1 file
+
+bin/bundle:
+  1: #!/usr/bin/env ruby
+  2  # frozen_string_literal: true
