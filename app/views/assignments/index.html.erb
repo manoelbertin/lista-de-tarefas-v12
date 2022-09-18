@@ -1,11 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Requesting Assignments</h1>
-
 <div id="assignments">
   <% @assignments.each do |assignment| %>
     <%= render assignment %>
   <% end %>
 </div>
-
-<%= link_to "New assignment", new_assignment_path %>
