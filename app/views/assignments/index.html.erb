@@ -1,7 +1,14 @@
-<p style="color: green"><%= notice %></p>
-
 <div id="assignments">
-  <% @assignments.each do |assignment| %>
-    <%= render assignment %>
-  <% end %>
+ <header>
+    <h2 id="date"><%= Date.today %></h2>
+    <p id="task-count">
+      <%= @assignments.count %> Assignments
+    </p>
+    <%#= render 'form', tarefa: Tarefa.new %>
+  </header>
+  <div id="list">
+      <% @assignments.each do |assignment| %>
+        <%= render assignment %>
+      <% end %>
+  </div>
 </div>

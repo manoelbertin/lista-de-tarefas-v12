@@ -36,7 +36,7 @@ main {
   padding: 0 20px;
 }
 
-#wrapper {
+#tarefas {
   position: relative;
   display: grid;
   background: #ffffff83;
