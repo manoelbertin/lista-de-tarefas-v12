@@ -1,5 +1,5 @@
-<div class="cards">
-<!--div class="cards <%= 'resolved' if assignment.resolved %>"-->
+
+<div class="cards <%= 'resolved' if assignment.resolved %>">
   <%= button_to '', assignment, method: :patch, class: "fas fa-check btn resolved-btn #{'active' if assignment.resolved}" %>
   <div class="cards-info">
     <h3 class="assignment">

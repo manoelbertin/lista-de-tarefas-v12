@@ -1,22 +1,9 @@
 class AssignmentsController < ApplicationController
-  before_action :set_assignment, only: %i[ show edit update destroy ]
+  before_action :set_assignment, only: %i[ update destroy ]
 
   # GET /assignments or /assignments.json
   def index
-    @assignments = Assignment.all
-  end
-
-  # GET /assignments/1 or /assignments/1.json
-  def show
-  end
-
-  # GET /assignments/new
-  def new
-    @assignment = Assignment.new
-  end
-
-  # GET /assignments/1/edit
-  def edit
+    @assignments = Assignment.order created_at: :desc
   end
 
   # POST /assignments or /assignments.json
@@ -37,25 +24,17 @@ class AssignmentsController < ApplicationController
 
   # PATCH/PUT /assignments/1 or /assignments/1.json
   def update
-    respond_to do |format|
-      if @assignment.update(assignment_params)
-        format.html { redirect_to assignment_url(@assignment), notice: "Assignment was successfully updated." }
-        format.json { render :show, status: :ok, location: @assignment }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @assignment.errors, status: :unprocessable_entity }
-      end
-    end
+    @assignment.resolved = !@assignment.resolved
+    @assignment.save
+
+    redirect_to assignments_url
   end
 
   # DELETE /assignments/1 or /assignments/1.json
   def destroy
     @assignment.destroy
 
-    respond_to do |format|
-      format.html { redirect_to assignments_url, notice: "Assignment was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    redirect_to assignments_url
   end
 
   private

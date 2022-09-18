@@ -6,9 +6,9 @@
     </p>
     <%= render 'form', assignment: Assignment.new %>
   </header>
-  <div id="list">
+  <section id="list">
       <% @assignments.each do |assignment| %>
         <%= render assignment %>
       <% end %>
-  </div>
+  </section>
 </div>

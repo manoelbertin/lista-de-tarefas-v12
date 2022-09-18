@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  resources :assignments
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :assignments, only: [:index, :create, :update, :destroy]
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  root "assignments#index"
 end
