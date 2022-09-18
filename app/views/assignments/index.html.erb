@@ -1,10 +1,10 @@
 <div id="assignments">
  <header>
-    <h2 id="date"><%= Date.today %></h2>
+    <h2 id="date"><%= l Date.today %></h2>
     <p id="task-count">
       <%= @assignments.count %> Assignments
     </p>
-    <%#= render 'form', tarefa: Tarefa.new %>
+    <%= render 'form', assignment: Assignment.new %>
   </header>
   <div id="list">
       <% @assignments.each do |assignment| %>
